@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,lightning:actionOverride">
+    <!-- Specify the pageReference type. Only object is supported. -->
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:handler name="render" value="{! this }" action="{! c.init }"/>
+
+    <!-- Implement the navigation service. -->
+    <lightning:navigation aura:id="navService"/>
+
+    <!-- pageReferenceUtil component -->
+    <lightning:pageReferenceUtils aura:id="pageRefUtils"/>
+</aura:component>

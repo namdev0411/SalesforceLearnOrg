@@ -1,0 +1,28 @@
+<template>
+    <lightning-quick-action-panel header="更新コメント">
+        <lightning-record-edit-form record-id={recordId}
+            object-api-name="Opportunity"
+            onsuccess={handleSuccess}
+            onload={handleLoading}
+            onsubmit={handleSave}>
+            <lightning-input-field field-name="UpCMT__c"></lightning-input-field>
+            <lightning-input-field class="slds-hide" field-name="StageName" value="設計相談中"></lightning-input-field>
+            <div class="slds-text-align_right">
+                <lightning-button variant="destructive" label="キャンセル" onclick={closeModal}></lightning-button>
+                <lightning-button variant="brand" class="slds-m-left_x-small" label="保存" type="submit">
+                </lightning-button>
+            </div>
+        </lightning-record-edit-form>
+        <template if:true={isLoading}>
+            <div class="slds-align_absolute-center">
+                <div class="slds-spinner_container">
+                    <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </lightning-quick-action-panel>
+</template>
