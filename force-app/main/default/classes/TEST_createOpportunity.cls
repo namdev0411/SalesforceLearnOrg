@@ -18,7 +18,6 @@ public with sharing class TEST_createOpportunity {
                 }
             }
         }
-        System.debug('field: '+fields);
         return fields;
     }
 }
